@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @Shahriyar Hasan.
-- 👀 I’m interested in HTML & CSS.
-- 🌱 I’m currently learning HTML.
+- 👀 I’m interested in HTML , CSS & JavaSricpt.
+- 🌱 I’m currently learning HTML & CSS.
 - 💞️ I’m looking to collaborate on HTML coding.
 - 📫 You can reach me by mail.
 
