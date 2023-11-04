@@ -1,7 +1,8 @@
-- 👋 Hi, I’m @Shahriyar Hasan.
+- 👋 Hi, I’m Shahriyar Hasan.
 - 👀 I’m interested in HTML , CSS & JavaSricpt.
-- 🌱 I’m currently learning HTML & CSS.
-- 💞️ I’m looking to collaborate on HTML coding.
+- 🌱 I’m currently learning C++.
+- 💞️ I'm doing some projects works on C++
+- 👨‍💻 I made some projects like Grade Calculator, Mess Account Management System and A simple simulation of ATM 🏧 Machine.
 - 📫 You can reach me by mail.
 
 <!---
