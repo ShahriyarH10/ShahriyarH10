@@ -1,25 +1,24 @@
-<img align="left" height="150" src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif"  />
+<h1 align="center">Peace be upon you</h1>
 
 ###
 
 <div align="center">
   <a href="https://www.linkedin.com/in/md-shahriyar-hasan/" target="_blank">
-    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="37" height="25" alt="linkedin logo"  />
+    <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="linkedin logo"  />
   </a>
   <a href="https://x.com/Shahriyar_H10" target="_blank">
-    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/twitter/default.svg" width="37" height="25" alt="twitter logo"  />
+    <img src="https://img.shields.io/static/v1?message=Twitter&logo=twitter&label=&color=1DA1F2&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="twitter logo"  />
   </a>
   <a href="https://t.me/Shahriyar_H10" target="_blank">
-    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/telegram/default.svg" width="37" height="25" alt="telegram logo"  />
-  </a>
-  <a href="https://tryhackme.com/p/ShahriyarH10" target="_blank">
-    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/tryhackme/default.svg" width="37" height="25" alt="tryhackme logo"  />
+    <img src="https://img.shields.io/static/v1?message=Telegram&logo=telegram&label=&color=2CA5E0&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="telegram logo"  />
   </a>
 </div>
 
-###
-
-<h1 align="center">Peace be upon you</h1>
+<div align="center">
+  <a href="https://tryhackme.com/p/ShahriyarH10" target="_blank">
+    <img src="https://tryhackme-badges.s3.amazonaws.com/ShahriyarH10.png" alt="TryHackMe Badge" />
+  </a>
+</div>
 
 ###
 
@@ -31,7 +30,7 @@
 
 ###
 
-<p align="left">Hi, I'm Shahriyar Hasan!  <br>👋 Active GitHub contributor since 2021<br><br>🚀 **0 public repositories**: I enjoy building, sharing, and collaborating on open-source projects.<br>- 🛠️ Always learning: I follow 7 developers and engage with the community to grow my skills.<br>- 🌱 **Consistent activity**: My latest updates are in October 2025, showing I’m committed to evolving my projects.<br>- 🤝 Building connections: I have 2 followers and am open to new collaborations.<br>- 💻 I focus on creating useful tools, learning new technologies, and contributing to open-source wherever possible.<br><br>Let’s connect and build something awesome together!</p>
+<p align="left">Hi, I'm Shahriyar Hasan!  <br>👋 Active GitHub contributor since 2021<br><br>- 🚀 20 public repositories: I enjoy building, sharing, and collaborating on open-source projects.<br>- 🛠️ Always learning: I follow 7 developers and engage with the community to grow my skills.<br>- 🌱 Consistent activity: My latest updates are in October 2025, showing I'm committed to evolving my projects.<br>- 🤝 Building connections: I have 2 followers and am open to new collaborations.<br>- 💻 I focus on creating useful tools, learning new technologies, and contributing to open-source wherever possible.<br><br>Let's connect and build something awesome together!</p>
 
 ###
 
@@ -104,14 +103,15 @@
 ###
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=ShahriyarH10&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=10&theme=github_dark&hide_border=false&order=2" height="150" alt="languages graph" /> <br>
-  <img src="https://github-readme-stats.vercel.app/api?username=ShahriyarH10&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=github_dark&locale=en&hide_border=false&order=1" height="250" alt="stats graph" /> <br>
-  <img src="https://streak-stats.demolab.com?user=ShahriyarH10&locale=en&mode=daily&theme=github_dark&hide_border=false&border_radius=5&order=3" height="220" alt="streak graph" /> <br>
-  <img src="https://github-profile-trophy.vercel.app?username=ShahriyarH10&theme=flat&no-bg=true" height="150" alt="trophy graph" /> <br>
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=ShahriyarH10&theme=github-dark&area=true&hide_border=false&hide_title=false&color=#6cc644&title_color=#6cc644&line=#6cc644&point=#6cc644&area_color=#6cc644" height="150" alt="activity-graph graph"  />
+  <img src="https://github-readme-stats.vercel.app/api?username=ShahriyarH10&hide_title=true&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=default&locale=en&hide_border=false&order=1" height="150" alt="stats graph"  />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=ShahriyarH10&locale=en&hide_title=true&layout=compact&card_width=320&langs_count=5&theme=default&hide_border=false&order=2" height="150" alt="languages graph"  />
+  <img src="https://streak-stats.demolab.com?user=ShahriyarH10&locale=en&mode=daily&theme=default&hide_border=false&border_radius=5&order=3" height="150" alt="streak graph"  />
+  <img src="https://github-profile-trophy.vercel.app?username=ShahriyarH10&theme=flat&column=-1&row=1&margin-w=8&margin-h=8&no-bg=false&no-frame=false&order=4" height="150" alt="trophy graph"  />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=ShahriyarH10&radius=16&theme=github-light&area=true&order=5&hide_title=true" height="300" alt="activity-graph graph"  />
 </div>
 
-###
+
+
 
 <!---
 ShahriyarH10/ShahriyarH10 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
