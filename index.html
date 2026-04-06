@@ -282,6 +282,9 @@
 <div id="graph-tooltip" class="graph-tooltip"></div>
 
 <script>
+    const HEADERS = {
+  Authorization: `Bearer ${window.GITHUB_TOKEN || ''}`
+};
 const USERNAME = 'ShahriyarH10';
 const API = 'https://api.github.com';
 
@@ -474,7 +477,7 @@ function buildBarGraph(eventsByDay) {
 
 /* ── FETCH USER ─────────────────────────────────────────────── */
 async function fetchUser() {
-  const r = await fetch(`${API}/users/${USERNAME}`);
+  const r = await fetch(`${API}/users/${USERNAME}`, { headers: HEADERS });
   if (!r.ok) throw new Error('rate limited');
   const d = await r.json();
   setEl('stat-repos',     fmtNum(d.public_repos));
@@ -648,6 +651,11 @@ async function init() {
     ['streak-commits','streak-prs','streak-issues','streak-reviews'].forEach(id => setEl(id, '0'));
     buildBarGraph({});
   }
+}
+
+// Inject token from Puppeteer (GitHub Actions)
+if (typeof window !== 'undefined' && !window.GITHUB_TOKEN) {
+  window.GITHUB_TOKEN = '';
 }
 
 init();
