@@ -22,7 +22,7 @@ const path = require('path');
   // Desktop viewport — wide enough to show full two-column layout
   await page.setViewport({ width: 1000, height: 800, deviceScaleFactor: 2 });
 
-  const filePath = path.resolve(__dirname, 'github_profile_preview.html');
+  const filePath = path.resolve(__dirname, 'index.html');
   console.log(`Loading: ${filePath}`);
 
   await page.goto(`file://${filePath}`, { waitUntil: 'networkidle2', timeout: 30000 });
