@@ -1,0 +1,11 @@
+{
+  "name": "shahriyarh10-profile",
+  "version": "1.0.0",
+  "description": "GitHub profile screenshot automation",
+  "scripts": {
+    "screenshot": "node screenshot.js"
+  },
+  "dependencies": {
+    "puppeteer": "^22.0.0"
+  }
+}
