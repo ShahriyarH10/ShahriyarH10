@@ -4,7 +4,6 @@ on:
   push:
     branches: [main]
   schedule:
-    # Runs every 6 hours to keep stats fresh
     - cron: '0 */6 * * *'
   workflow_dispatch:
 
@@ -22,29 +21,18 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        run: npm install puppeteer
-
-      - name: Install Chromium dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            libgbm-dev \
-            libasound2t64 \
-            libatk1.0-0 \
-            libatk-bridge2.0-0 \
-            libcups2 \
-            libdrm2 \
-            libxkbcommon0 \
-            libxcomposite1 \
-            libxdamage1 \
-            libxfixes3 \
-            libxrandr2 \
-            libpango-1.0-0 \
-            libcairo2 \
-            libnss3 \
-            libnspr4
+          npm install
+          npm install -g http-server
 
-      - name: Take screenshot
+      - name: Start local server
+        run: |
+          http-server . -p 8080 &
+          sleep 3
+
+      - name: Run screenshot script
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node screenshot.js
 
       - name: Commit and push screenshot
