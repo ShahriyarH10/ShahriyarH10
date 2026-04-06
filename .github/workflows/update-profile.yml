@@ -1,0 +1,56 @@
+name: Update Profile Screenshot
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # Runs every 6 hours to keep stats fresh
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  screenshot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install puppeteer
+
+      - name: Install Chromium dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libgbm-dev \
+            libasound2 \
+            libatk1.0-0 \
+            libatk-bridge2.0-0 \
+            libcups2 \
+            libdrm2 \
+            libxkbcommon0 \
+            libxcomposite1 \
+            libxdamage1 \
+            libxfixes3 \
+            libxrandr2 \
+            libpango-1.0-0 \
+            libcairo2 \
+            libnss3 \
+            libnspr4
+
+      - name: Take screenshot
+        run: node screenshot.js
+
+      - name: Commit and push screenshot
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add profile-preview.png
+          git diff --staged --quiet || git commit -m "chore: auto-update profile screenshot [skip ci]"
+          git push
