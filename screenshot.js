@@ -1,5 +1,4 @@
 const puppeteer = require('puppeteer');
-const path = require('path');
 
 (async () => {
   console.log('Launching browser...');
@@ -9,51 +8,45 @@ const path = require('path');
     args: [
       '--no-sandbox',
       '--disable-setuid-sandbox',
-      '--disable-dev-shm-usage',
-      '--disable-accelerated-2d-canvas',
-      '--no-first-run',
-      '--no-zygote',
-      '--disable-gpu'
+      '--disable-dev-shm-usage'
     ]
   });
 
   const page = await browser.newPage();
 
-  // Desktop viewport — wide enough to show full two-column layout
   await page.setViewport({ width: 1000, height: 800, deviceScaleFactor: 2 });
 
-  const filePath = path.resolve(__dirname, 'index.html');
-  console.log(`Loading: ${filePath}`);
+  console.log('Opening local server page...');
 
-  await page.goto(`file://${filePath}`, { waitUntil: 'networkidle2', timeout: 30000 });
+  await page.goto('http://localhost:8080/index.html', {
+    waitUntil: 'networkidle2',
+    timeout: 60000
+  });
 
-  // Wait for Google Fonts and any animations to settle
-  await new Promise(r => setTimeout(r, 3000));
-
-  // Wait for GitHub API data to load (stat cards stop showing "—")
+  // Wait for stats to load properly
   try {
-    await page.waitForFunction(
-      () => {
-        const el = document.getElementById('stat-repos');
+    await page.waitForFunction(() => {
+      const ids = ['stat-repos','stat-stars','streak-commits'];
+      return ids.every(id => {
+        const el = document.getElementById(id);
         return el && !el.classList.contains('loading');
-      },
-      { timeout: 10000 }
-    );
-    console.log('GitHub stats loaded.');
+      });
+    }, { timeout: 20000 });
+
+    console.log('Stats loaded successfully.');
   } catch (e) {
-    console.log('GitHub stats timed out, screenshotting anyway.');
+    console.log('Timeout waiting for stats, continuing...');
   }
 
-  // Extra settle time for bar animations
-  await new Promise(r => setTimeout(r, 1500));
-
-  const outputPath = path.resolve(__dirname, 'profile-preview.png');
+  // Extra delay for animations
+  await new Promise(r => setTimeout(r, 2000));
 
   await page.screenshot({
-    path: outputPath,
+    path: 'profile-preview.png',
     fullPage: true
   });
 
-  console.log(`Screenshot saved to: ${outputPath}`);
+  console.log('Screenshot saved.');
+
   await browser.close();
 })();
