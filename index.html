@@ -63,33 +63,6 @@
     .info-dot { width: 6px; height: 6px; border-radius: 50%; background: #378add; margin-top: 6px; flex-shrink: 0; }
     .info-text { font-size: 13px; color: #8a9fc0; font-family: 'Fira Code', monospace; line-height: 1.5; }
 
-    /* CONTRIBUTION GRAPH — bar chart style */
-    .graph-card { background: #060c1a; border: 1.5px solid #1a2a4a; border-radius: 14px; padding: 1.25rem; margin-bottom: 1.5rem; }
-    .bar-graph-wrap { width: 100%; overflow: hidden; }
-    .bar-graph-inner { display: flex; align-items: flex-end; gap: 3px; height: 80px; width: 100%; }
-    .bar-graph-col { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; }
-    .bar-graph-bar { width: 100%; border-radius: 2px 2px 0 0; background: #0d1a2e; transition: background 0.2s; min-height: 2px; }
-    .bar-graph-col:hover .bar-graph-bar { opacity: 0.8; }
-    .bar-graph-col[data-active="true"] .bar-graph-bar { background: #6bb8ff !important; }
-    .bar-graph-lbl { font-family: 'Fira Code', monospace; font-size: 8px; color: #3a5a7e; white-space: nowrap; overflow: hidden; text-overflow: clip; width: 100%; text-align: center; }
-    .bar-graph-month-labels { display: flex; gap: 3px; margin-bottom: 4px; width: 100%; }
-    .bar-graph-month-lbl { font-family: 'Fira Code', monospace; font-size: 9px; color: #3a5a7e; flex: 1; min-width: 0; overflow: hidden; }
-    .graph-legend { display: flex; align-items: center; gap: 10px; margin-top: 10px; justify-content: flex-end; flex-wrap: wrap; }
-    .graph-legend-item { display: flex; align-items: center; gap: 5px; font-family: 'Fira Code', monospace; font-size: 10px; color: #5a7a9e; }
-    .graph-legend-box { width: 12px; height: 12px; border-radius: 2px; }
-    .graph-tooltip { position: fixed; background: #0d1a2e; border: 1px solid #1a2a4a; border-radius: 6px; padding: 6px 10px; font-family: 'Fira Code', monospace; font-size: 11px; color: #a0c0e8; pointer-events: none; z-index: 9999; display: none; white-space: nowrap; }
-    .graph-summary { display: flex; gap: 16px; margin-top: 12px; flex-wrap: wrap; }
-    .graph-summary-item { font-family: 'Fira Code', monospace; font-size: 11px; color: #5a7a9e; }
-    .graph-summary-item strong { color: #6bb8ff; }
-
-    /* STREAK */
-    .streak-card { background: #060c1a; border: 1.5px solid #1a2a4a; border-radius: 14px; padding: 1.25rem; margin-bottom: 1.5rem; }
-    .streak-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
-    .streak-item { text-align: center; padding: 12px 8px; background: #0a1628; border-radius: 10px; border: 1px solid #1a2a4a; }
-    .streak-item .s-num { font-size: 22px; font-weight: 800; color: #6bb8ff; font-family: 'Fira Code', monospace; }
-    .streak-item .s-num.loading { color: #1a2a4a; animation: pulse 1.2s infinite; }
-    .streak-item .s-lbl { font-size: 10px; color: #5a7a9e; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 4px; }
-
     /* REPOS */
     .recent-repos { background: #060c1a; border: 1.5px solid #1a2a4a; border-radius: 14px; padding: 1.25rem; margin-bottom: 1.5rem; }
     .repo-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #0d1a2e; }
@@ -103,11 +76,13 @@
 
     /* LANGUAGE BARS */
     .activity-bar { background: #060c1a; border: 1.5px solid #1a2a4a; border-radius: 14px; padding: 1.25rem; margin-bottom: 1.5rem; }
+    .lang-loading { font-family: 'Fira Code', monospace; font-size: 11px; color: #3a5a7e; animation: pulse 1.2s infinite; padding: 4px 0; }
     .bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-    .bar-label { font-family: 'Fira Code', monospace; font-size: 12px; color: #7a9fcf; width: 90px; text-align: right; flex-shrink: 0; }
+    .bar-label { font-family: 'Fira Code', monospace; font-size: 12px; color: #7a9fcf; width: 100px; text-align: right; flex-shrink: 0; }
     .bar-track { flex: 1; background: #0a1628; border-radius: 4px; height: 8px; overflow: hidden; }
     .bar-fill { height: 100%; border-radius: 4px; width: 0%; transition: width 1s ease; }
-    .bar-pct { font-family: 'Fira Code', monospace; font-size: 11px; color: #5a7a9e; width: 36px; text-align: right; }
+    .bar-pct { font-family: 'Fira Code', monospace; font-size: 11px; color: #5a7a9e; width: 40px; text-align: right; }
+    .lang-count { font-family: 'Fira Code', monospace; font-size: 10px; color: #3a5a7e; margin-top: 10px; }
 
     /* SKILLS */
     .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 10px; }
@@ -126,7 +101,6 @@
     /* RESPONSIVE */
     @media (max-width: 640px) {
       .two-col, .three-col { grid-template-columns: 1fr; }
-      .streak-grid { grid-template-columns: 1fr 1fr; }
       .name { font-size: 28px; }
       .header-top { flex-direction: column-reverse; }
       .thm-header-badge { flex-direction: row; width: 100%; }
@@ -142,7 +116,7 @@
     <a href="https://t.me/Shahriyar_H10"                      target="_blank" class="badge telegram">⬡ Telegram</a>
   </div>
 
-  <!-- HEADER with TryHackMe badge top-right -->
+  <!-- HEADER -->
   <div class="header-section">
     <div class="header-top">
       <div class="header-left">
@@ -193,37 +167,6 @@
     <div class="stat-card"><div class="num loading" id="stat-gists">—</div><div class="lbl">Public Gists</div></div>
   </div>
 
-  <!-- CONTRIBUTION BAR CHART -->
-  <div class="graph-card">
-    <div class="section-title">// contribution activity — last 52 weeks (weekly bars)</div>
-    <div class="bar-graph-wrap">
-      <div id="bar-graph-months" class="bar-graph-month-labels"></div>
-      <div id="bar-graph-inner" class="bar-graph-inner">
-        <div style="font-family:'Fira Code',monospace;font-size:11px;color:#3a5a7e;animation:pulse 1.2s infinite;align-self:center">loading chart...</div>
-      </div>
-    </div>
-    <div class="graph-legend">
-      <div class="graph-legend-item"><div class="graph-legend-box" style="background:#0d1a2e"></div>no activity</div>
-      <div class="graph-legend-item"><div class="graph-legend-box" style="background:#0c447c"></div>low</div>
-      <div class="graph-legend-item"><div class="graph-legend-box" style="background:#185fa5"></div>moderate</div>
-      <div class="graph-legend-item"><div class="graph-legend-box" style="background:#378add"></div>active</div>
-      <div class="graph-legend-item"><div class="graph-legend-box" style="background:#6bb8ff"></div>very active</div>
-    </div>
-    <div class="graph-summary" id="graph-summary"></div>
-  </div>
-  <div id="graph-tooltip" class="graph-tooltip"></div>
-
-  <!-- CONTRIBUTION ACTIVITY COUNTS -->
-  <div class="streak-card">
-    <div class="section-title">// contribution activity (last 300 public events)</div>
-    <div class="streak-grid">
-      <div class="streak-item"><div class="s-num loading" id="streak-commits">—</div><div class="s-lbl">Commits</div></div>
-      <div class="streak-item"><div class="s-num loading" id="streak-prs">—</div><div class="s-lbl">Pull Requests</div></div>
-      <div class="streak-item"><div class="s-num loading" id="streak-issues">—</div><div class="s-lbl">Issues</div></div>
-      <div class="streak-item"><div class="s-num loading" id="streak-reviews">—</div><div class="s-lbl">Reviews</div></div>
-    </div>
-  </div>
-
   <!-- RECENTLY PUSHED REPOS -->
   <div class="recent-repos">
     <div class="section-title">// recently pushed repos</div>
@@ -242,16 +185,11 @@
     <div id="top-repo-content"></div>
   </div>
 
-  <!-- ALL LANGUAGES -->
+  <!-- LANGUAGES — fully dynamic from GitHub API -->
   <div class="activity-bar">
     <div class="section-title">// languages</div>
-    <div id="lang-bars">
-      <div class="bar-row">
-        <div class="bar-label">loading</div>
-        <div class="bar-track"><div class="bar-fill" style="background:#1a2a4a;width:60%;transition:none"></div></div>
-        <div class="bar-pct">—</div>
-      </div>
-    </div>
+    <div id="lang-bars"><div class="lang-loading">// scanning all repos...</div></div>
+    <div id="lang-count" class="lang-count"></div>
   </div>
 
   <!-- TECH STACK -->
@@ -279,12 +217,7 @@
   <div class="footer">// let's build something awesome together · github.com/ShahriyarH10</div>
 </div>
 
-<div id="graph-tooltip" class="graph-tooltip"></div>
-
 <script>
-    const HEADERS = {
-  Authorization: `Bearer ${window.GITHUB_TOKEN || ''}`
-};
 const USERNAME = 'ShahriyarH10';
 const API = 'https://api.github.com';
 
@@ -311,8 +244,6 @@ const LANG_COLORS = {
   Default:    ['#185fa5','#378add']
 };
 
-const BAR_COLORS = ['#0d1a2e','#0c447c','#185fa5','#378add','#6bb8ff'];
-
 function gradient(lang) {
   const c = LANG_COLORS[lang] || LANG_COLORS.Default;
   return `linear-gradient(90deg,${c[0]},${c[1]})`;
@@ -333,152 +264,15 @@ function setEl(id, val) {
   el.textContent = val;
   el.classList.remove('loading');
 }
-function fmtDate(d) {
-  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-}
 function fmtNum(n) {
   if (n >= 1000) return (n / 1000).toFixed(1) + 'k';
   return String(n);
 }
 
-/* ── BAR CHART GRAPH ────────────────────────────────────────── */
-function buildBarGraph(eventsByDay) {
-  const tooltip = document.getElementById('graph-tooltip');
-  const today = new Date();
-  today.setHours(23,59,59,999);
-
-  // Build 52 weeks of data, each week = sum of events Mon-Sun
-  const weeks = [];
-  const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-
-  // Start from 52 weeks ago, aligned to Monday
-  const start = new Date(today);
-  start.setDate(start.getDate() - (52 * 7) + 1);
-  // align to Monday
-  const dow = start.getDay();
-  const offset = dow === 0 ? -6 : 1 - dow;
-  start.setDate(start.getDate() + offset);
-
-  const cur = new Date(start);
-  while (cur <= today) {
-    const weekStart = new Date(cur);
-    let total = 0;
-    const dayDates = [];
-    for (let d = 0; d < 7; d++) {
-      const key = cur.toISOString().slice(0,10);
-      total += eventsByDay[key] || 0;
-      dayDates.push({ date: new Date(cur), count: eventsByDay[key] || 0 });
-      cur.setDate(cur.getDate() + 1);
-    }
-    weeks.push({ weekStart, total, days: dayDates });
-  }
-
-  const maxVal = Math.max(...weeks.map(w => w.total), 1);
-
-  function level(v) {
-    if (v === 0) return 0;
-    if (v <= maxVal * 0.25) return 1;
-    if (v <= maxVal * 0.5)  return 2;
-    if (v <= maxVal * 0.75) return 3;
-    return 4;
-  }
-
-  // Month labels row
-  const monthsEl = document.getElementById('bar-graph-months');
-  monthsEl.innerHTML = '';
-  let lastMonth = -1;
-  weeks.forEach(w => {
-    const m = w.weekStart.getMonth();
-    if (m !== lastMonth) {
-      monthsEl.innerHTML += `<div class="bar-graph-month-lbl">${MONTHS[m]}</div>`;
-      lastMonth = m;
-    } else {
-      monthsEl.innerHTML += '<div class="bar-graph-month-lbl"></div>';
-    }
-  });
-
-  // Bar columns
-  const inner = document.getElementById('bar-graph-inner');
-  inner.innerHTML = '';
-
-  weeks.forEach(w => {
-    const lv = level(w.total);
-    const heightPct = w.total === 0 ? 3 : Math.max(5, Math.round((w.total / maxVal) * 100));
-    const color = BAR_COLORS[lv];
-    const isThisWeek = w.days.some(d => {
-      const today2 = new Date(); today2.setHours(0,0,0,0);
-      const dd = new Date(d.date); dd.setHours(0,0,0,0);
-      return dd.getTime() === today2.getTime();
-    });
-
-    const col = document.createElement('div');
-    col.className = 'bar-graph-col';
-    if (isThisWeek) col.setAttribute('data-active','true');
-
-    const bar = document.createElement('div');
-    bar.className = 'bar-graph-bar';
-    bar.style.height = heightPct + '%';
-    bar.style.background = isThisWeek ? '#6bb8ff' : color;
-
-    col.appendChild(bar);
-
-    const dateLabel = w.weekStart.toLocaleDateString('en-US', {month:'short', day:'numeric'});
-    col.title = `${dateLabel}: ${w.total} event${w.total !== 1 ? 's' : ''}`;
-
-    col.addEventListener('mouseenter', e => {
-      tooltip.style.display = 'block';
-      tooltip.textContent = w.total > 0
-        ? `Week of ${dateLabel}: ${w.total} events`
-        : `Week of ${dateLabel}: no activity`;
-    });
-    col.addEventListener('mousemove', e => {
-      tooltip.style.left = (e.clientX + 12) + 'px';
-      tooltip.style.top  = (e.clientY - 32) + 'px';
-    });
-    col.addEventListener('mouseleave', () => { tooltip.style.display = 'none'; });
-
-    inner.appendChild(col);
-  });
-
-  // Summary stats
-  const allDays = weeks.flatMap(w => w.days).filter(d => {
-    const dd = new Date(d.date);
-    const t = new Date(); t.setHours(23,59,59,999);
-    return dd <= t;
-  });
-  const activeDays = allDays.filter(d => d.count > 0).length;
-  const totalEvents = allDays.reduce((s, d) => s + d.count, 0);
-  const activeWeeks = weeks.filter(w => w.total > 0).length;
-
-  // Streak calculation (days)
-  let curStreak = 0, maxStreak = 0, tmp = 0;
-  for (let i = allDays.length - 1; i >= 0; i--) {
-    if (allDays[i].count > 0) {
-      tmp++;
-      if (curStreak === 0) curStreak = tmp;
-    } else {
-      if (curStreak === 0) { /* streak not started yet going back */ }
-      maxStreak = Math.max(maxStreak, tmp);
-      if (curStreak > 0 && tmp === 0) { /* already broken */ }
-      if (i < allDays.length - 1 && curStreak > 0) maxStreak = Math.max(maxStreak, curStreak);
-      tmp = 0;
-    }
-  }
-  maxStreak = Math.max(maxStreak, tmp, curStreak);
-
-  document.getElementById('graph-summary').innerHTML = `
-    <div class="graph-summary-item"><strong>${totalEvents}</strong> total events</div>
-    <div class="graph-summary-item"><strong>${activeDays}</strong> active days</div>
-    <div class="graph-summary-item"><strong>${activeWeeks}</strong> active weeks</div>
-    <div class="graph-summary-item"><strong>${curStreak}</strong> day current streak</div>
-    <div class="graph-summary-item"><strong>${maxStreak}</strong> day longest streak</div>
-  `;
-}
-
 /* ── FETCH USER ─────────────────────────────────────────────── */
 async function fetchUser() {
-  const r = await fetch(`${API}/users/${USERNAME}`, { headers: HEADERS });
-  if (!r.ok) throw new Error('rate limited');
+  const r = await fetch(`${API}/users/${USERNAME}`);
+  if (!r.ok) throw new Error(`HTTP ${r.status}`);
   const d = await r.json();
   setEl('stat-repos',     fmtNum(d.public_repos));
   setEl('stat-followers', fmtNum(d.followers));
@@ -490,12 +284,12 @@ async function fetchUser() {
     '// synced at ' + new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
 }
 
-/* ── FETCH ALL REPOS ────────────────────────────────────────── */
+/* ── FETCH ALL REPOS (paginated) ────────────────────────────── */
 async function fetchAllRepos() {
   let page = 1, all = [];
   while (true) {
     const r = await fetch(`${API}/users/${USERNAME}/repos?per_page=100&page=${page}&sort=pushed`);
-    if (!r.ok) break;
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
     const batch = await r.json();
     if (!Array.isArray(batch) || batch.length === 0) break;
     all = all.concat(batch);
@@ -505,18 +299,18 @@ async function fetchAllRepos() {
   return all;
 }
 
+/* ── PROCESS REPOS ──────────────────────────────────────────── */
 async function processRepos() {
   const repos = await fetchAllRepos();
   if (!repos.length) return;
 
+  // Aggregate stats
   let totalStars = 0, totalForks = 0, totalWatchers = 0;
-
-  repos.forEach(repo => {
-    totalStars    += repo.stargazers_count || 0;
-    totalForks    += repo.forks_count      || 0;
-    totalWatchers += repo.watchers_count   || 0;
+  repos.forEach(r => {
+    totalStars    += r.stargazers_count || 0;
+    totalForks    += r.forks_count      || 0;
+    totalWatchers += r.watchers_count   || 0;
   });
-
   setEl('stat-stars',    fmtNum(totalStars));
   setEl('stat-forks',    fmtNum(totalForks));
   setEl('stat-watchers', fmtNum(totalWatchers));
@@ -524,7 +318,7 @@ async function processRepos() {
   if (repos[0]?.pushed_at)
     document.getElementById('pill-updated').textContent = timeAgo(repos[0].pushed_at);
 
-  // Recently pushed repos
+  // Recently pushed repos (top 5)
   document.getElementById('repos-list').innerHTML = repos.slice(0,5).map(repo => `
     <div class="repo-item">
       <a class="repo-name" href="${repo.html_url}" target="_blank">${repo.name}</a>
@@ -535,7 +329,7 @@ async function processRepos() {
       </div>
     </div>`).join('');
 
-  // Most starred
+  // Most starred repo
   const top = [...repos].sort((a,b) => b.stargazers_count - a.stargazers_count)[0];
   if (top) {
     document.getElementById('top-repo-card').style.display = 'block';
@@ -553,109 +347,81 @@ async function processRepos() {
       </div>`;
   }
 
-  // Count repos per language (no byte fetching)
-  const langCount = {};
-  repos.forEach(repo => {
-    if (repo.language) langCount[repo.language] = (langCount[repo.language] || 0) + 1;
-  });
+  // ── LANGUAGES: fetch byte counts from every non-fork repo
+  // Batch requests 8 at a time to stay within rate limits
+  const nonForks = repos.filter(r => !r.fork);
+  const langBytes = {};
+  const BATCH = 8;
+  for (let i = 0; i < nonForks.length; i += BATCH) {
+    const slice = nonForks.slice(i, i + BATCH);
+    const results = await Promise.all(
+      slice.map(repo =>
+        fetch(`${API}/repos/${USERNAME}/${repo.name}/languages`)
+          .then(r => r.ok ? r.json() : {})
+          .catch(() => ({}))
+      )
+    );
+    results.forEach(langs => {
+      Object.entries(langs).forEach(([lang, bytes]) => {
+        langBytes[lang] = (langBytes[lang] || 0) + bytes;
+      });
+    });
+  }
 
-  const sorted = Object.entries(langCount).sort((a,b) => b[1]-a[1]);
-  const totalVal = sorted.reduce((s,[,v]) => s+v, 0);
-  renderLangBars(sorted, totalVal);
-}
+  // Sort all languages by total bytes and render all of them
+  const sorted = Object.entries(langBytes).sort((a,b) => b[1] - a[1]);
+  const totalBytes = sorted.reduce((s,[,v]) => s + v, 0);
 
-function renderLangBars(sorted, totalVal) {
-  document.getElementById('lang-bars').innerHTML = sorted.map(([lang, val]) => {
-    const pct = ((val / totalVal) * 100).toFixed(1);
-    const sid = 'bar-' + lang.replace(/[^a-zA-Z0-9]/g,'');
+  if (!sorted.length) {
+    document.getElementById('lang-bars').innerHTML =
+      '<div class="lang-loading">// no language data found</div>';
+    return;
+  }
+
+  document.getElementById('lang-bars').innerHTML = sorted.map(([lang, bytes]) => {
+    const pct = ((bytes / totalBytes) * 100).toFixed(1);
+    const sid = 'bar-' + lang.replace(/[^a-zA-Z0-9]/g, '');
     return `<div class="bar-row">
       <div class="bar-label">${lang}</div>
       <div class="bar-track"><div class="bar-fill" id="${sid}" style="background:${gradient(lang)};width:0%"></div></div>
       <div class="bar-pct">${pct}%</div>
     </div>`;
   }).join('');
+
+  // Show total count
+  document.getElementById('lang-count').textContent =
+    `// ${sorted.length} language${sorted.length !== 1 ? 's' : ''} detected across ${nonForks.length} repos`;
+
+  // Animate bars after render
   setTimeout(() => {
-    sorted.forEach(([lang, val]) => {
-      const pct = ((val / totalVal) * 100).toFixed(1);
-      const el = document.getElementById('bar-' + lang.replace(/[^a-zA-Z0-9]/g,''));
+    sorted.forEach(([lang, bytes]) => {
+      const pct = ((bytes / totalBytes) * 100).toFixed(1);
+      const el = document.getElementById('bar-' + lang.replace(/[^a-zA-Z0-9]/g, ''));
       if (el) el.style.width = pct + '%';
     });
   }, 120);
 }
 
-/* ── FETCH EVENTS ───────────────────────────────────────────── */
-async function fetchEvents() {
-  const results = await Promise.all([1,2,3].map(p =>
-    fetch(`${API}/users/${USERNAME}/events/public?per_page=100&page=${p}`)
-      .then(r => r.ok ? r.json() : [])
-      .catch(() => [])
-  ));
-
-  // Flatten and deduplicate by event id
-  const seen = new Set();
-  const events = results.flat().filter(e => {
-    if (!e || !e.id) return false;
-    if (seen.has(e.id)) return false;
-    seen.add(e.id);
-    return true;
-  });
-
-  if (!events.length) { buildBarGraph({}); return; }
-
-  let commits = 0, prs = 0, issues = 0, reviews = 0;
-  const byDay = {};
-
-  events.forEach(e => {
-    const day = (e.created_at || '').slice(0,10);
-    if (!day) return;
-    if (e.type === 'PushEvent') {
-      const c = (e.payload?.commits || []).length;
-      commits += c;
-      byDay[day] = (byDay[day] || 0) + c;
-    } else {
-      byDay[day] = (byDay[day] || 0) + 1;
-    }
-    if (e.type === 'PullRequestEvent')       prs++;
-    if (e.type === 'IssuesEvent')            issues++;
-    if (e.type === 'PullRequestReviewEvent') reviews++;
-  });
-
-  setEl('streak-commits', commits || '0');
-  setEl('streak-prs',     prs     || '0');
-  setEl('streak-issues',  issues  || '0');
-  setEl('streak-reviews', reviews || '0');
-
-  buildBarGraph(byDay);
-}
-
 /* ── INIT ───────────────────────────────────────────────────── */
 async function init() {
-  const [userResult, reposResult, eventsResult] = await Promise.allSettled([
+  const [userResult, reposResult] = await Promise.allSettled([
     fetchUser(),
-    processRepos(),
-    fetchEvents()
+    processRepos()
   ]);
 
   if (userResult.status === 'rejected') {
+    console.error('fetchUser failed:', userResult.reason);
     document.getElementById('last-updated').textContent = '// api rate limited — try again in 1hr';
     ['stat-repos','stat-followers','stat-following','stat-gists'].forEach(id => setEl(id, '—'));
   }
   if (reposResult.status === 'rejected') {
+    console.error('processRepos failed:', reposResult.reason);
     document.getElementById('repos-list').innerHTML =
       '<div style="font-family:\'Fira Code\',monospace;font-size:12px;color:#3a5a7e;padding:8px 0">// could not load repos</div>';
     ['stat-stars','stat-forks','stat-watchers'].forEach(id => setEl(id, '—'));
     document.getElementById('lang-bars').innerHTML =
-      '<div style="font-family:\'Fira Code\',monospace;font-size:11px;color:#3a5a7e">// could not load language data</div>';
+      '<div class="lang-loading">// could not load language data</div>';
   }
-  if (eventsResult.status === 'rejected') {
-    ['streak-commits','streak-prs','streak-issues','streak-reviews'].forEach(id => setEl(id, '0'));
-    buildBarGraph({});
-  }
-}
-
-// Inject token from Puppeteer (GitHub Actions)
-if (typeof window !== 'undefined' && !window.GITHUB_TOKEN) {
-  window.GITHUB_TOKEN = '';
 }
 
 init();
